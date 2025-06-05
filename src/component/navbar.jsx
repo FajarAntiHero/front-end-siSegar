@@ -20,9 +20,7 @@ export default function NavbarContainer() {
           </div>
           <div className="w-[20%] h-full flex items-center justify-center">
             <i
-              className={`fa-solid fa-bars text-[32px] text-emerald-50 cursor-pointer 
-              transition-transform duration-200 ease-in-out 
-              hover:scale-110 active:scale-90`}
+              className={`fa-solid fa-bars text-[32px] text-emerald-50 cursor-pointer transition-transform duration-150 ease-in-out focus:bg-emerald-300 active:scale-80`}
               onClick={toggleMenu}
             ></i>
           </div>
@@ -31,7 +29,7 @@ export default function NavbarContainer() {
 
       {/* Side Menu */}
       <div
-        className={`w-[60vw] h-[90vh] fixed top-[10vh] right-0 bg-emerald-100 z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`w-[60vw] h-[90vh] fixed top-[10vh] right-0 bg-emerald-100 z-50 transform transition-transform duration-150 ease-in-out ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -39,7 +37,7 @@ export default function NavbarContainer() {
           {["HOME", "ABOUT", "SERVICE", "BLOG"].map((item) => (
             <div
               key={item}
-              className="w-full h-[5vh] bg-white flex items-center justify-center transition-colors duration-200 hover:bg-emerald-200"
+              className="w-full h-[5vh] bg-white flex items-center justify-center transition-colors duration-150 hover:bg-emerald-200"
             >
               <a href="#" className="text-emerald-950 font-medium">
                 {item}
