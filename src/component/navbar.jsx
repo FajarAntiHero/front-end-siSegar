@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo_sisegar from "../assets/images/logo_sisegar.png";
+import { LogoSiSegar } from "./utils";
 
 function NavbarSideList( {navbarListName}){
 
@@ -74,9 +74,7 @@ export default function NavbarContainer() {
       <nav className="bg-parsley-200 p-4 flex justify-between w-full h-[10vh]">
         <div className="w-[97.5%] h-full m-auto flex justify-between">
           <div className="w-[50%] h-full flex items-center justify-center">
-            <div className="w-[26%] h-[80%] bg-white mr-[10px] rounded-3xl overflow-hidden">
-              <img src={logo_sisegar} alt="" className="object-cover w-full h-full"/>
-            </div>
+            <LogoSiSegar/>
             <p className="text-parsley-950 font-bold text-2xl font-montserrat">siSegar</p>
           </div>
           <div className="w-[20%] h-full flex items-center justify-center">

@@ -12,7 +12,7 @@ export function IconApp( {nameIcon} ){
 
 export function LogoSiSegar(){
     return (
-        <div className='w-[2.5rem] h-[2.5rem] rounded-3xl overflow-hidden'>
+        <div className='w-[2.5rem] h-[2.5rem] rounded-3xl overflow-hidden mr-[1rem]'>
             <img src={logoSiSegar} alt="" srcset="" className='w-full h-full object-cover'/>
         </div>
     )
