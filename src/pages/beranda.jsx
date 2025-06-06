@@ -1,4 +1,7 @@
 import NavbarContainer from "../component/navbar";
+import FooterContainer from "../component/footer";
+
+
 
 export default function Beranda(){
     return (
@@ -6,10 +9,11 @@ export default function Beranda(){
             {/* NAVBAR */}
                 <NavbarContainer/>
             {/* HERO */}
-
+            
             {/* CONTENT 1 */}
 
             {/* FOOTER */}
+                <FooterContainer/>
         </>
     )
 }
