@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import { useState } from "react";
 import { LogoSiSegar } from "./utils";
 import { Link } from "react-router-dom";
@@ -105,4 +103,3 @@ export default function NavbarContainer() {
 
   );
 }
->>>>>>> b331a8be9418469ac80e140ed6d4b22a1310bb4e
