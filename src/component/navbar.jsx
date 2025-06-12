@@ -38,13 +38,13 @@ function NavbarSideList( {navbarListName}){
           <p className="font-montserrat text-parsley-900 font-bold">{navbarListName}</p>
         </div>
         <div className={`w-full h-fit ${layananOpen ? "block" : "hidden"}`}>
-          <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-200 before:content-[''] before:absolute before:w-1.5 before:h-full before:bg-parsley-900 before:left-0 relative">
+          <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-20">
             <Link to="/layanan/komunitas" className="font-montserrat text-parsley-900 font-bold">Komunitas</Link>
           </div>
-          <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-200 before:content-[''] before:absolute before:w-1.5 before:h-full before:bg-parsley-900 before:left-0 relative">
+          <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-20">
             <Link to="/layanan/acara" className="font-montserrat text-parsley-900 font-bold">Acara</Link>
           </div>
-          <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-200 before:content-[''] before:absolute before:w-1.5 before:h-full before:bg-parsley-900 before:left-0 relative">
+          <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-20">
             <Link to="/layanan/deteksi-gambar" className="font-montserrat text-parsley-900 font-bold">Deteksi Sampah</Link>
           </div>
           <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-200">
