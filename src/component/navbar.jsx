@@ -103,3 +103,14 @@ export default function NavbarContainer() {
 
   );
 }
+
+export function NavbarDashboard(){
+  return (
+    <>
+      <div className="w-full h-[8vh] bg-parsley-300 flex justify-center items-center rounded-3xl mb-4">
+        <LogoSiSegar/>
+        <p className="text-parsley-950 text-2xl font-bold">siSegar</p>
+      </div>
+    </>
+  )
+}
