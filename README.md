@@ -13,7 +13,6 @@
 - 🎨 Tailwind CSS for utility-first, customizable styling  
 - 🧠 Organized project structure with scalability in mind  
 
----
 
 ## 🔐 Authentication
 
@@ -21,7 +20,7 @@
 - Protected routes for user dashboards and event creation  
 - Future support for role-based access (e.g., admin, member)
 
----
+
 
 ## 🌐 Backend Integration
 
@@ -29,7 +28,7 @@
 - Designed to integrate with Express.js, Laravel, or any backend of choice  
 - Dynamic data loading using fetch/axios (WIP)
 
----
+
 
 ## 👥 Contributors
 
