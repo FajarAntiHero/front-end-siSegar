@@ -64,7 +64,7 @@ export default function ComunityCardComponent({
               <IconApp key={index} nameIcon={icon} link={url} />
             ))}
           </div>
-          <button className="w-[28vw] h-[6vh] bg-[#d9d9d9] rounded-4xl flex items-center justify-center">
+          <button className="w-[28vw] h-[6vh] bg-[#d9d9d9] rounded-4xl flex items-center justify-center font-bold font-montserrat">
             {buttonText}
           </button>
         </div>
