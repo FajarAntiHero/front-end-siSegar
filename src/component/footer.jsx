@@ -11,9 +11,9 @@ const socialIcons = [
 
 export default function FooterContainer() {
   return (
-    <footer>
-        <div className="bg-parsley-100 flex flex-col items-center">
-            <div className="container p-6">
+    <footer className="bg-parsley-100 w-full">
+        <div className=" w-full md:w-[75%] md:mx-auto flex flex-col items-center">
+            <div className="w-full p-6">
 
                 {/* Logo & Judul */}
                 <div className="w-full h-fit flex justify-center items-center mb-6">
@@ -44,7 +44,7 @@ export default function FooterContainer() {
         </div>
         {/* Copyright */}
         <div className="bg-parsley-300 w-full p-4">
-            <div className="container flex flex-col justify-center">
+            <div className="w-full md:w-[75%] md:mx-auto flex flex-col justify-center">
                 <div className="flex items-center justify-center w-full gap-25 mb-[1rem]">
                     <a href="#" className="text-[16px] text-center text-parsley-950 relative cursor-pointer before:content-[''] before:w-full before:h-0.5 before:bg-parsley-950 before:scale-x-0 hover:before:scale-x-100 before:transition-all before:duration-[0.5s] before:absolute before:bottom-0 ">All Rights Reserved</a>
                     <a href="#" className="text-[16px] text-center text-parsley-950 relative cursor-pointer before:content-[''] before:w-full before:h-0.5 before:bg-parsley-950 before:scale-x-0 hover:before:scale-x-100 before:transition-all before:duration-[0.5s] before:absolute before:bottom-0">Privacy Policy</a>

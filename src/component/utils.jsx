@@ -14,7 +14,7 @@ export function IconApp( {nameIcon} ){
 
 export function LogoSiSegar(){
     return (
-        <div className='w-[2.5rem] h-[2.5rem] rounded-3xl overflow-hidden mr-[1rem]'>
+        <div className='w-[2rem] md:w-[2.5rem] h-[2rem] md:h-[2.5rem] rounded-3xl overflow-hidden mr-[1rem]'>
             <img src={logoSiSegar} alt="" className='w-full h-full object-cover'/>
         </div>
     )
@@ -26,8 +26,8 @@ export function InputComponent( {nameLabel, idForm, typeInput, placeholder, marg
         return (
             <>
                 <div className={`w-full h-[8vh] ${marginForm}`}>
-                    <label htmlFor={idForm} className='font-montserrat font-bold text-parsley-600 text-[16px] pl-4 mb-2'>{nameLabel}</label>
-                    <input type={typeInput} id={idForm} placeholder={placeholder} className='w-full h-[calc(100%_-_24px)] rounded-2xl bg-parsley-300 font-montserrat text-[20px] p-4 text-parsley-600 placeholder:font-bold placeholder:text-parsley-600' required />
+                    <label htmlFor={idForm} className='font-montserrat font-bold text-parsley-600 text-[16px] lg:text-[12px] pl-4 mb-2'>{nameLabel}</label>
+                    <input type={typeInput} id={idForm} placeholder={placeholder} className='w-full h-[calc(100%_-_24px)] rounded-2xl bg-parsley-300 font-montserrat text-[20px] lg:text-[16px] p-4 text-parsley-600 placeholder:font-bold placeholder:text-parsley-600' required />
                 </div>
             </>
         )
@@ -35,8 +35,8 @@ export function InputComponent( {nameLabel, idForm, typeInput, placeholder, marg
         return (
             <>
                 <div className={`w-full h-[8vh] ${marginForm}`}>
-                    <label htmlFor={idForm} className='font-montserrat font-bold text-parsley-600 text-[16px] pl-4 mb-2'>{nameLabel}</label>
-                    <input type={typeInput} id={idForm} placeholder={placeholder} className='w-full h-[calc(100%_-_24px)] rounded-2xl bg-parsley-300 font-montserrat text-[20px] p-4 text-parsley-600 placeholder:font-bold placeholder:text-parsley-600' />
+                    <label htmlFor={idForm} className='font-montserrat font-bold text-parsley-600 text-[16px] lg:text-[12px] pl-4 mb-2'>{nameLabel}</label>
+                    <input type={typeInput} id={idForm} placeholder={placeholder} className='w-full h-[calc(100%_-_24px)] rounded-2xl bg-parsley-300 font-montserrat text-[20px] lg:text-[16px] p-4 text-parsley-600 placeholder:font-bold placeholder:text-parsley-600' />
                 </div>
             </>
         )
@@ -79,7 +79,7 @@ export function MenuDashboard({bgMenu}){
     )
 }
 
-export function CardCommunityDashboard(){
+export function CardDashboard(){
     return (
         <>
             <div className='w-full h-fit rounded-2xl bg-parsley-50 p-4 mb-4'>

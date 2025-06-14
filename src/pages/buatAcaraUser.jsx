@@ -8,10 +8,10 @@ export default function CreateEventUser(){
             <div className="w-full h-fit p-4">
                 <NavbarDashboard/>
                 <div className="w-full h-fit bg-parsley-300 rounded-3xl">
-                    <div className="w-full h-[15vh] flex justify-center items-center">
-                        <p className="font-montserrat text-3xl font-bold bg-gradient-to-r from-parsley-950 via-parsley-700 to-parsley-500 text-transparent bg-clip-text">Buat Acara</p>
+                    <div className="w-full md:w-[80%] md:mx-auto h-[15vh] flex justify-center items-center">
+                        <p className="font-montserrat text-3xl md:text-[2.5rem] font-bold bg-gradient-to-r from-parsley-950 via-parsley-700 to-parsley-500 text-transparent bg-clip-text">Buat Acara</p>
                     </div>
-                    <div className="w-full h-[calc(100vh_-_15vh_-_8vh_-_46px)] p-4">
+                    <div className="w-full md:w-[80%] md:mx-auto h-[calc(100vh_-_15vh_-_8vh_-_46px)] p-4">
                         <div className="w-full h-[20%] px-4">
                             <MenuDashboard bgMenu={"bg-parsley-50"}/>
                         </div>

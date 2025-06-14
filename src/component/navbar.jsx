@@ -19,14 +19,14 @@ function NavbarSideList( {navbarListName}){
     return (
       <div>
         <div className="w-full h-[5vh] bg-parsley-200 flex items-center justify-center transition-colors duration-200" onClick={openTentang}>
-          <p className="font-montserrat text-parsley-900 font-bold">{navbarListName}</p>
+          <p className="font-montserrat text-parsley-900 md:text-[16px] font-bold">{navbarListName}</p>
         </div>
         <div className={`w-full h-fit ${tentangOpen ? "block" : "hidden"}`}>
           <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-200">
-            <Link to="/tentang/sisegar" className="font-montserrat text-parsley-900 font-bold">siSegar</Link>
+            <Link to="/tentang/sisegar" className="font-montserrat text-parsley-900 md:text-[16px] font-bold">siSegar</Link>
           </div>
           <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-200">
-            <Link to="/tentang/sisegar-developer" className="font-montserrat text-parsley-900 font-bold">siSegar Developer</Link>
+            <Link to="/tentang/sisegar-developer" className="font-montserrat text-parsley-900 md:text-[16px] font-bold">siSegar Developer</Link>
           </div>
         </div>
       </div>
@@ -35,20 +35,20 @@ function NavbarSideList( {navbarListName}){
     return (
       <div>
         <div className="w-full h-[5vh] bg-parsley-200 flex items-center justify-center transition-colors duration-200" onClick={openLayanan}>
-          <p className="font-montserrat text-parsley-900 font-bold">{navbarListName}</p>
+          <p className="font-montserrat text-parsley-900 md:text-[16px] font-bold">{navbarListName}</p>
         </div>
         <div className={`w-full h-fit ${layananOpen ? "block" : "hidden"}`}>
           <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-20">
-            <Link to="/layanan/komunitas" className="font-montserrat text-parsley-900 font-bold">Komunitas</Link>
+            <Link to="/layanan/komunitas" className="font-montserrat text-parsley-900 md:text-[16px] font-bold">Komunitas</Link>
           </div>
           <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-20">
-            <Link to="/layanan/acara" className="font-montserrat text-parsley-900 font-bold">Acara</Link>
+            <Link to="/layanan/acara" className="font-montserrat text-parsley-900 font-bold md:text-[16px]">Acara</Link>
           </div>
           <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-20">
-            <Link to="/layanan/deteksi-gambar" className="font-montserrat text-parsley-900 font-bold">Deteksi Sampah</Link>
+            <Link to="/layanan/deteksi-gambar" className="font-montserrat text-parsley-900 md:text-[16px] font-bold">Deteksi Sampah</Link>
           </div>
           <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-200">
-            <Link to="/layanan/kontak" className="font-montserrat text-parsley-900 font-bold">Kontak</Link>
+            <Link to="/layanan/kontak" className="font-montserrat text-parsley-900 md:text-[16px] font-bold">Kontak</Link>
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@ function NavbarSideList( {navbarListName}){
   } else {
     return (
       <div className="w-full h-[5vh] bg-parsley-200 flex items-center justify-center transition-colors duration-200">
-        <Link to={`/${navbarListName == 'Beranda' ? "" : navbarListName.toLowerCase()}`} className="font-montserrat text-parsley-900 font-bold">
+        <Link to={`/${navbarListName == 'Beranda' ? "" : navbarListName.toLowerCase()}`} className="font-montserrat md:text-[16px] text-parsley-900 font-bold">
           {navbarListName}
         </Link>
       </div>
@@ -72,13 +72,28 @@ export default function NavbarContainer() {
   };
 
   return (
-    <nav className="bg-parsley-200 p-4 flex justify-between w-full h-[10vh] sticky z-50 top-0">
-      <div className="w-[97.5%] h-full m-auto flex justify-between">
-        <div className="w-[50%] h-full flex items-center justify-center">
+    <nav className="bg-parsley-200 lg:bg-parsley-50 flex justify-between w-full h-[10vh] sticky z-50 top-0">
+      <div className="w-[90%] md:w-[75%] h-full m-auto flex justify-between">
+        <div className="w-[50%] lg:w-[20%] h-full flex items-center justify-center md:justify-start">
           <LogoSiSegar/>
           <p className="text-parsley-950 font-bold text-2xl font-montserrat">siSegar</p>
         </div>
-        <div className="w-[20%] h-full flex items-center justify-center lg:hidden">
+        <div className="hidden lg:block lg:w-[40%] lg:h-full lg:flex lg:items-center lg:justify-around">
+          <Link to="/" className="font-montserrat text-[16px] text-parsley-600">Beranda</Link>
+          <div className="w-fit h-fit relative">
+            <p className="font-montserrat text-[16px] text-parsley-600">Tentang</p>
+            <div className=""></div>
+          </div>
+          <Link to="/blog" className="font-montserrat text-[16px] text-parsley-600">Blog</Link>
+          <div className="w-fit h-fit">
+            <p className="font-montserrat text-[16px] text-parsley-600">Layanan</p>
+          </div>
+        </div>
+        <div className="hidden lg:block lg:w-[20%] lg:h-full lg:flex lg:items-center lg:justify-around">
+          <Link to="/daftar-akun" className="inline-block h-fit w-fit p-2 px-4 rounded-xl bg-parsley-600 hover:bg-parsley-600/50 text-parsley-50 hover:text-parsley-600 font-bold font-montserrat ">Daftar</Link>
+          <Link to="/masuk-akun" className="inline-block h-fit w-fit p-2 px-4 rounded-xl bg-parsley-600/50 hover:bg-parsley-600 text-parsley-600 hover:text-parsley-50 font-bold font-montserrat ">Masuk</Link>
+        </div>
+        <div className="w-[20%] h-full flex items-center justify-center md:justify-end lg:hidden">
           <i
             className={`fa-solid fa-bars text-[32px] text-parsley-900 cursor-pointer 
             transition-transform duration-200 ease-in-out 
@@ -90,7 +105,7 @@ export default function NavbarContainer() {
 
       {/* Side Menu */}
       <div
-        className={`w-[60vw] h-[90vh] fixed top-[10vh] right-0 bg-parsley-200 z-[999] transform transition-transform duration-300 ease-in-out ${
+        className={`w-[60vw] md:w-[45vw] h-[90vh] fixed top-[10vh] right-0 bg-parsley-200 z-[999] transform transition-transform duration-300 ease-in-out ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -107,7 +122,7 @@ export default function NavbarContainer() {
 export function NavbarDashboard(){
   return (
     <>
-      <div className="w-full h-[8vh] bg-parsley-300 flex justify-center items-center rounded-3xl mb-4">
+      <div className="w-full h-[8vh] bg-parsley-300 flex justify-center items-center rounded-3xl mb-[12px]">
         <LogoSiSegar/>
         <p className="text-parsley-950 text-2xl font-bold">siSegar</p>
       </div>

@@ -1,26 +1,41 @@
 import FooterContainer from "../component/footer";
 import NavbarContainer from "../component/navbar";
+import air_terjun from "../assets/images/Content Web SiSegar/air_terjun.jpg";
+
+function Hero(){
+    return (
+        <>
+            <div className={`w-full h-[90vh] relative flex items-center justify-center p-[3rem]`}>
+                <img src={air_terjun} alt="" className="h-full w-full object-cover absolute top-0 bottom-0 left-0 right-0"/>
+                <div className="relative z-20 w-full h-[50%] bg-white/15 backdrop-blur-sm rounded-xl shadow-lg border-[2px] border-white/15 p-6 text-white flex flex-col items-center justify-center overflow-hidden transform transition-all duration-300 hover:scale-[1.01] cursor-pointer">
+
+                </div>
+
+            </div>
+        </>
+    )
+}
 
 function Content(){
 
     const listData = [
-        {image: '', titleCard: "siSegar Komunitas", messageCard: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis recusandae debitis quaerat?"},
-        {image: '', titleCard: "siSegar Acara", messageCard: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis recusandae debitis quaerat?"},
-        {image: '', titleCard: "siSegar Pintar", messageCard: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis recusandae debitis quaerat?"}
+        {image: '', titleCard: "Fajar Maulana", messageCard: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis recusandae debitis quaerat?"},
+        {image: '', titleCard: "Farid Rahmat Alfiansyah", messageCard: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis recusandae debitis quaerat?"},
+        {image: '', titleCard: "Ridho Kurnia Aji", messageCard: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis recusandae debitis quaerat?"}
     ]
     return (
-        <div className="w-full h-fit bg-parsley-50">
-            <div className="container h-fit p-6">
+        <div className="w-full h-fit lg:h-[90vh] lg:flex lg:justify-center lg:items-center bg-parsley-50">
+            <div className="w-full h-fit md:w-[75%] lg:w-[60%] md:mx-auto p-6 pt-8">
                 <div className="w-full h-fit mt-[3rem] mb-[2rem]">
                     <p className="font-montserrat text-center mb-[1rem] font-bold text-parsley-950 text-[28px]">siSegar Membagikan Ide Hebatmu</p>
                     <p className="font-montserrat text-center text-parsley-600 text-[16px]">
                         Saatnya mewujudkan lingkungan sehat impianmu dengan belajar dan tumbuh, bersama mereka yang memiliki tujuan serupa.
                     </p>
                 </div>
-                <div className="w-full h-fit">
+                <div className="w-full h-fit lg:flex lg:flex-wrap lg:justify-between">
                     {listData.map((item) => {
                         return (
-                            <div className="w-full h-fit rounded-[20px] bg-parsley-300 p-[8px] mb-6">
+                            <div className="w-full lg:w-[30%] h-fit rounded-[20px] bg-parsley-300 p-[8px] mb-6">
                                 <div className="w-full h-[20vh] rounded-xl bg-gray-500 overflow-hidden mb-3">
                                     <img src={item.image} alt="" className="w-full h-full object-cover"/>
                                 </div>
@@ -40,6 +55,7 @@ export default function SiSegarDeveloper(){
     return (
         <>
             <NavbarContainer/>
+            <Hero/>
             <Content/>
             <FooterContainer/>
         </>
