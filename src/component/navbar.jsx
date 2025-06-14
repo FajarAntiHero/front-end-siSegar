@@ -73,7 +73,24 @@ function NavbarSideList( {navbarListName}){
           </div>
         </div>
       </div>
-    )} else {
+    )
+  } else if (navbarListName == "Akun Anda") {
+    return (
+      <div>
+        <div className="w-full h-[5vh] bg-parsley-200 flex items-center justify-center transition-colors duration-200" onClick={openAkun}>
+          <a href="#" className="font-montserrat text-parsley-900 font-bold">{navbarListName}</a>
+        </div>
+        <div className={`w-full h-fit ${AkunOpen ? "block" : "hidden"}`}>
+          <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-200 before:content-[''] before:absolute before:w-1.5 before:h-full before:bg-parsley-900 before:left-0 relative">
+            <a href="#" className="font-montserrat text-parsley-900 font-bold">Profile</a>
+          </div>
+          <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-200 before:content-[''] before:absolute before:w-1.5 before:h-full before:bg-parsley-900 before:left-0 relative">
+            <a href="#" className="font-montserrat text-parsley-900 font-bold">Log-Out</a>
+          </div>
+        </div>
+      </div>
+    )
+  } else {
     return (
       <div className="w-full h-[5vh] bg-parsley-200 flex items-center justify-center transition-colors duration-200">
         <Link to={`/${navbarListName == 'Beranda' ? "" : navbarListName.toLowerCase()}`} className="font-montserrat text-parsley-900 font-bold">
