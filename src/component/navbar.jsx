@@ -5,6 +5,7 @@ function NavbarSideList( {navbarListName}){
 
   const [tentangOpen, setTentangOpen] = useState(false)
   const [layananOpen, setLayananOpen] = useState(false)
+  const [AkunOpen, setAkunOpen] = useState(false)
 
   const openTentang = () => {
     setTentangOpen((state) => !tentangOpen)
@@ -12,6 +13,10 @@ function NavbarSideList( {navbarListName}){
 
   const openLayanan = () => {
     setLayananOpen((state) => !layananOpen)
+  }
+
+  const openAkun = () => {
+    setAkunOpen((state) => !AkunOpen)
   }
 
   if (navbarListName == "Tentang") {
@@ -52,7 +57,22 @@ function NavbarSideList( {navbarListName}){
         </div>
       </div>
     )
-  } else {
+  }else if (navbarListName == "Akun") {
+    return (
+      <div>
+        <div className="w-full h-[5vh] bg-parsley-200 flex items-center justify-center transition-colors duration-200" onClick={openAkun}>
+          <a href="#" className="font-montserrat text-parsley-900 font-bold">{navbarListName}</a>
+        </div>
+        <div className={`w-full h-fit ${AkunOpen ? "block" : "hidden"}`}>
+          <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-200 before:content-[''] before:absolute before:w-1.5 before:h-full before:bg-parsley-900 before:left-0 relative">
+            <a href="#" className="font-montserrat text-parsley-900 font-bold">Log-in</a>
+          </div>
+          <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-200 before:content-[''] before:absolute before:w-1.5 before:h-full before:bg-parsley-900 before:left-0 relative">
+            <a href="#" className="font-montserrat text-parsley-900 font-bold">Register</a>
+          </div>
+        </div>
+      </div>
+    )} else {
     return (
       <div className="w-full h-[5vh] bg-parsley-200 flex items-center justify-center transition-colors duration-200">
         <a href="#" className="font-montserrat text-parsley-900 font-bold">{navbarListName}</a>
@@ -113,6 +133,7 @@ export default function NavbarContainer() {
         <NavbarSideList navbarListName={"Tentang"}/>
         <NavbarSideList navbarListName={"Blog"}/>
         <NavbarSideList navbarListName={"Layanan"}/>
+        <NavbarSideList navbarListName={"Akun"}/>
       </div>
     </div>
   );
