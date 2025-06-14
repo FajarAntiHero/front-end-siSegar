@@ -1,4 +1,4 @@
-# 🍃 front-end-siSegar
+# 🍃 siSegar (Front-End)
 
 **front-end-siSegar** is the frontend of a nature-themed community web platform where users can post and explore agendas related to the environment. Built with **Vite**, **Tailwind CSS**, and **JavaScript**, this project provides a clean, responsive, and engaging interface for nature-loving communities.
 
