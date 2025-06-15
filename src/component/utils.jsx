@@ -1,6 +1,10 @@
+// utils.jsx
+
 import logoSiSegar from '../assets/images/logo_sisegar.png';
 import { Link } from "react-router";
 import { ButtonCustomSizeableComponent } from './button';
+import { useState } from "react";
+import { UploadCloud } from "lucide-react";
 
 export function IconApp({ width, height,nameIcon, link = "#" }) {
   return (
@@ -50,6 +54,36 @@ export function InputComponent({
         value={value}
         onChange={onChange}
       />
+    </div>
+  );
+}
+
+export function InputImage({ onFileSelect }) {
+  const handleFileChange = (e) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      onFileSelect(file);
+    }
+  };
+
+  return (
+    <div className="flex flex-col items-center justify-center py-6 bg-parsley-50">
+      <label
+        htmlFor="upload"
+        className="cursor-pointer w-[45%] max-w-md h-[6vh] bg-parsley-300 hover:bg-parsley-400 text-parsley-950 font-bold font-montserrat text-md flex items-center justify-center rounded-2xl shadow-md transition duration-300 ease-in-out hover:scale-105"
+      >
+        📁 Pilih Gambar
+        <input
+          id="upload"
+          type="file"
+          accept="image/png, image/jpeg"
+          className="hidden"
+          onChange={handleFileChange}
+        />
+      </label>
+      <p className="text-sm text-parsley-600 font-montserrat mt-2">
+        Format: PNG atau JPEG
+      </p>
     </div>
   );
 }
