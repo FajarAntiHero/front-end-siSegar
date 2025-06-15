@@ -74,22 +74,6 @@ function NavbarSideList( {navbarListName}){
         </div>
       </div>
     )
-  // } else if (navbarListName == "Akun Anda") {
-  //   return (
-  //     <div>
-  //       <div className="w-full h-[5vh] bg-parsley-200 flex items-center justify-center transition-colors duration-200" onClick={openAkun}>
-  //         <a href="#" className="font-montserrat text-parsley-900 font-bold">{navbarListName}</a>
-  //       </div>
-  //       <div className={`w-full h-fit ${AkunOpen ? "block" : "hidden"}`}>
-  //         <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-200 before:content-[''] before:absolute before:w-1.5 before:h-full before:bg-parsley-900 before:left-0 relative">
-  //           <a href="#" className="font-montserrat text-parsley-900 font-bold">Profile</a>
-  //         </div>
-  //         <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-200 before:content-[''] before:absolute before:w-1.5 before:h-full before:bg-parsley-900 before:left-0 relative">
-  //           <a href="#" className="font-montserrat text-parsley-900 font-bold">Log-Out</a>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   )
   } else {
     return (
       <div className="w-full h-[5vh] bg-parsley-200 flex items-center justify-center transition-colors duration-200">
@@ -141,18 +125,15 @@ export default function NavbarContainer() {
       </div>
 
       {/* Side Menu */}
-      <div
-        className={`w-[60vw] md:w-[45vw] h-[90vh] fixed top-[10vh] right-0 bg-parsley-200 z-[999] transform transition-transform duration-300 ease-in-out ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <NavbarSideList navbarListName={"Beranda"}/>
-        <NavbarSideList navbarListName={"Tentang"}/>
-        <NavbarSideList navbarListName={"Blog"}/>
-        <NavbarSideList navbarListName={"Layanan"}/>
-        <NavbarSideList navbarListName={"Akun"}/>
-      </div>
-    </nav>
+        <div className={`w-[60vw] md:w-[45vw] h-[90vh] fixed top-[10vh] right-0 bg-parsley-200 z-[999] transform transition-transform duration-300 ease-in-out ${
+          menuOpen ? "translate-x-0" : "translate-x-full"}`}>
+          <NavbarSideList navbarListName={"Beranda"}/>
+          <NavbarSideList navbarListName={"Tentang"}/>
+          <NavbarSideList navbarListName={"Blog"}/>
+          <NavbarSideList navbarListName={"Layanan"}/>
+          <NavbarSideList navbarListName={"Akun"}/>
+        </div>
+  </nav>
 
   );
 }

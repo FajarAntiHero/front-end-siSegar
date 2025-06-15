@@ -1,3 +1,4 @@
+import logo_sisegar from "../assets/images/logo_sisegar.png";
 import { IconApp, LogoSiSegar } from "./utils";
 import useScrollAnimation from "./useScrollAnimation";
 
