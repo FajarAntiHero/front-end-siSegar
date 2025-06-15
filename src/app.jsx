@@ -48,9 +48,9 @@ export default function App() {
           <Route path='/masuk-akun' element={<LogInUser/>}/>
           <Route path='/user'>
             <Route path='dashboard' element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <MainDashboard/>
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }/>
             <Route path='lihat-komunitas' element={<ShowCommunityUser/>}/>
             <Route path='buat-komunitas' element={<CreateCommunityUser/>}/>

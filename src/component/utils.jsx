@@ -23,68 +23,68 @@ export function LogoSiSegar(){
     )
 }
 
-export function InputComponent( {nameLabel, idForm, typeInput, placeholder, marginForm, isRequired, value, onChange}){
-
-    if (isRequired){
-        return (
-            <>
-                <div className={`w-full h-[8vh] ${marginForm}`}>
-                    <label htmlFor={idForm} className='font-montserrat font-bold text-parsley-600 text-[12px] md:text-[14px] pl-4 mb-2'>{nameLabel}</label>
-                    <input 
-                        type={typeInput} 
-                        id={idForm} 
-                        placeholder={placeholder} 
-                        className='w-full h-[calc(100%_-_24px)] rounded-2xl bg-parsley-300 font-montserrat text-[14px] md:text-[16px] p-4 text-parsley-600 placeholder:font-bold placeholder:text-parsley-600' 
-                        required
-                        value={value}
-                        onChange={onChange}
-
-                    />
-                </div>
-            </>
-        )
-    } else {
-        return (
-            <>
-                <div className={`w-full h-[8vh] ${marginForm}`}>
-                    <label htmlFor={idForm} className='font-montserrat font-bold text-parsley-600 text-[12px] md:text-[14px] pl-4 mb-2'>{nameLabel}</label>
-                    <input 
-                        type={typeInput} 
-                        id={idForm} 
-                        placeholder={placeholder} 
-                        className='w-full h-[calc(100%_-_24px)] rounded-2xl bg-parsley-300 font-montserrat text-[14px] md:text-[16px] p-4 text-parsley-600 placeholder:font-bold placeholder:text-parsley-600' 
-                        value={value}
-                        onChange={onChange}
-
-                    />
-                </div>
-            </>
-        )
-    }
+export function InputComponent({
+  nameLabel,
+  idForm,
+  typeInput,
+  placeholder,
+  marginForm,
+  isRequired,
+  value,
+  onChange
+}) {
+  return (
+    <div className={`w-full h-[8vh] ${marginForm}`}>
+      <label
+        htmlFor={idForm}
+        className="font-montserrat font-bold text-parsley-600 text-[12px] md:text-[14px] pl-4 mb-2"
+      >
+        {nameLabel}
+      </label>
+      <input
+        type={typeInput}
+        id={idForm}
+        placeholder={placeholder}
+        className="w-full h-[calc(100%_-_24px)] rounded-2xl bg-parsley-300 font-montserrat text-[14px] md:text-[16px] p-4 text-parsley-600 placeholder:font-bold placeholder:text-parsley-600 focus:outline-none focus:ring-2 focus:ring-parsley-600"
+        required={isRequired}
+        value={value}
+        onChange={onChange}
+      />
+    </div>
+  );
 }
 
-export function TextAreaComponent( {nameLabel, idForm, typeInput, placeholder, marginForm, bgInput, isRequired}){
 
-    if (isRequired){
-        return (
-            <>
-                <div className={`w-full h-[15vh] ${marginForm}`}>
-                    <label htmlFor={idForm} className='font-montserrat font-bold text-parsley-600 text-[12px] md:text-[14px] pl-4 mb-2'>{nameLabel}</label>
-                    <textarea type={typeInput} id={idForm}  required placeholder={placeholder} className={`w-full h-[calc(100%_-_24px)] resize-none rounded-2xl ${bgInput} font-montserrat text-[14px] md:text-[16px] p-4 text-parsley-600 placeholder:font-bold placeholder:text-parsley-600`}></textarea>
-                </div>
-            </>
-        )
-    } else {
-        return (
-            <>
-                <div className={`w-full h-[15vh] ${marginForm}`}>
-                    <label htmlFor={idForm} className='font-montserrat font-bold text-parsley-600 text-[12px] md:text-[14px] pl-4 mb-2'>{nameLabel}</label>
-                    <textarea type={typeInput} id={idForm} placeholder={placeholder} className={`w-full h-[calc(100%_-_24px)] resize-none rounded-2xl ${bgInput} font-montserrat text-[14px] md:text-[16px] p-4 text-parsley-600 placeholder:font-bold placeholder:text-parsley-6001`}></textarea>
-                </div>
-            </>
-        )
-    }
+export function TextAreaComponent({
+  nameLabel,
+  idForm,
+  placeholder,
+  marginForm,
+  bgInput,
+  isRequired,
+  value,
+  onChange
+}) {
+  return (
+    <div className={`w-full h-[15vh] ${marginForm}`}>
+      <label
+        htmlFor={idForm}
+        className="font-montserrat font-bold text-parsley-600 text-[12px] md:text-[14px] pl-4 mb-2"
+      >
+        {nameLabel}
+      </label>
+      <textarea
+        id={idForm}
+        required={isRequired}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        className={`w-full h-[calc(100%_-_24px)] resize-none rounded-2xl ${bgInput} font-montserrat text-[14px] md:text-[16px] p-4 text-parsley-600 placeholder:font-bold placeholder:text-parsley-600 focus:outline-none focus:ring-2 focus:ring-parsley-600`}
+      ></textarea>
+    </div>
+  );
 }
+
 
 export function MenuDashboard({bgMenu}){
     return (
