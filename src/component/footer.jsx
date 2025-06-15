@@ -1,5 +1,5 @@
-import logo_sisegar from "../assets/images/logo_sisegar.png";
 import { IconApp, LogoSiSegar } from "./utils";
+import useScrollAnimation from "./useScrollAnimation";
 
 const socialIcons = [
   "fa-youtube",
@@ -10,8 +10,9 @@ const socialIcons = [
 ];
 
 export default function FooterContainer() {
+
   return (
-    <footer className="bg-parsley-100 w-full">
+    <footer  className="bg-parsley-100 w-full">
         <div className=" w-full md:w-[75%] md:mx-auto flex flex-col items-center">
             <div className="w-full p-6">
 
@@ -34,7 +35,7 @@ export default function FooterContainer() {
                     <p className="text-[16px] text-center font-bold text-parsley-950 mb-3 font-montserrat">Sosial Media siSegar</p>
                     <div className="w-full h-fit gap-2 flex justify-center">
                         {socialIcons.map((icon) => (
-                        <IconApp nameIcon={icon}/>
+                        <IconApp height={"h-[2.5rem]"} width={"w-[2.5rem]"} nameIcon={icon}/>
                         ))}
                     </div>
                 </div>

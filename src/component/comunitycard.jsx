@@ -9,15 +9,13 @@ export default function ComunityCardComponent({
   buttonText = "Button"
 }) {
   return (
-    <div className="m-[1vh_1vw] flex justify-center">
-      <div className="bg-parsley-100 w-[95%] rounded-3xl flex flex-col items-center">
-
+    <div className="w-full md:w-[80%] lg:w-[45%] h-fit bg-parsley-50 p-4 rounded-2xl mb-4">
         {/* Thumbnail */}
-        <div className="bg-[#d9d9d9] w-[90%] h-[22vh] rounded-2xl mt-[2vh] flex items-center justify-center overflow-hidden">
+        <div className="w-full h-[20vh] rounded-2xl mb-6 overflow-hidden">
           {thumbnailImage ? (
             <img
               src={thumbnailImage}
-              alt="Thumbnail"
+              alt={"Gambar" + comunityName}
               className="w-full h-full object-cover"
               onError={(e) => {
                 e.target.style.display = "none";
@@ -29,7 +27,7 @@ export default function ComunityCardComponent({
         </div>
 
         {/* Tags */}
-        {tags.length > 0 && (
+        {/* {tags.length > 0 && (
           <div className="mx-[6vh_2vh] mt-[1vh] w-full flex justify-start">
             <div className="flex gap-[2vw] flex-wrap">
               {tags.map((tag, index) => (
@@ -42,33 +40,30 @@ export default function ComunityCardComponent({
               ))}
             </div>
           </div>
-        )}
+        )} */}
 
         {/* Description */}
-        <div className="mx-[6vh] mt-[2vh] w-[90%] flex justify-start mb-[2vh]">
-          <div className="flex flex-col gap-2">
-            <h1 className="font-bold font-montserrat text-xl text-parsley-700">
+        <div className="w-full h-fit mb-6">
+            <p className="font-bold font-montserrat mb-2 text-[20px] text-parsley-700">
               {comunityName || "Comunity Name"}
-            </h1>
-            <p className="font-normal font-montserrat text-sm text-parsley-500">
+            </p>
+            <p className="font-normal font-montserrat text-[16px] text-parsley-500">
               {comunityDesc ||
                 "Comunity Descriptions... Lorem ipsum dolor sit amet consectetur adipisicing elit."}
             </p>
-          </div>
         </div>
 
         {/* Social + Button */}
-        <div className="mx-[6vh] mt-[1vh] w-[90%] flex justify-between items-center mb-[2vh]">
-          <div className="flex gap-[1vw] justify-center items-center flex-wrap">
+        <div className="w-full h-fit flex justify-between mb-4">
+          <div className="w-[55%] flex justify-between items-center flex-wrap">
             {socialLinks.map(({ icon, url }, index) => (
-              <IconApp key={index} nameIcon={icon} link={url} />
+              <IconApp key={index} nameIcon={icon} link={url} height={"h-[2.2rem]"} width={"w-[2.2rem]"}/>
             ))}
           </div>
-          <button className="w-[28vw] h-[6vh] bg-[#d9d9d9] rounded-4xl flex items-center justify-center font-bold font-montserrat">
+          <button className="w-[40%] py-2 bg-parsley-700 text-[16px] rounded-xl flex items-center justify-center text-parsley-50 font-bold font-montserrat">
             {buttonText}
           </button>
         </div>
-      </div>
     </div>
   );
 }

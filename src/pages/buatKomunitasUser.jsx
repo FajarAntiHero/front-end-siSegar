@@ -9,13 +9,13 @@ export default function CreateCommunityUser(){
                 <NavbarDashboard/>
                 <div className="w-full h-fit bg-parsley-300 rounded-3xl">
                     <div className="w-full md:w-[80%] md:mx-auto h-[15vh] flex justify-center items-center">
-                        <p className="font-montserrat text-3xl md:text-[2.5rem] font-bold bg-gradient-to-r from-parsley-950 via-parsley-700 to-parsley-500 text-transparent bg-clip-text">Buat Komunitas</p>
+                        <p className="font-montserrat text-2xl md:text-3xl font-bold bg-gradient-to-r from-parsley-950 via-parsley-700 to-parsley-500 text-transparent bg-clip-text">Buat Komunitas</p>
                     </div>
                     <div className="w-full md:w-[80%] md:mx-auto h-[calc(100vh_-_15vh_-_8vh_-_46px)] p-4">
                         <div className="w-full h-[20%] px-4">
                             <MenuDashboard bgMenu={"bg-parsley-50"}/>
                         </div>
-                        <div className="w-full h-[80%] rounded-2xl bg-parsley-50 p-3 pt-4 overflow-scroll">
+                        <div className="w-full h-[80%] rounded-2xl bg-parsley-50 p-3 pt-4 overflow-y-scroll">
                             <form action="" className="w-full h-fit">
                                 <InputComponent 
                                     nameLabel={"Nama Komunitas"}

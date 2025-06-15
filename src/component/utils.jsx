@@ -2,13 +2,13 @@ import logoSiSegar from '../assets/images/logo_sisegar.png';
 import { Link } from "react-router";
 import { ButtonCustomSizeableComponent } from './button';
 
-export function IconApp({ nameIcon, link = "#" }) {
+export function IconApp({ width, height,nameIcon, link = "#" }) {
   return (
     <a
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-[2.5rem] h-[2.5rem] rounded-3xl border-2 bg-parsley-300 border-parsley-800 flex justify-center items-center"
+      className={`${width} ${height} rounded-3xl border-2 bg-parsley-300 border-parsley-800 flex justify-center items-center`}
     >
       <i className={`fa-brands ${nameIcon} text-parsley-800 text-[1.2rem]`} />
     </a>
@@ -17,20 +17,29 @@ export function IconApp({ nameIcon, link = "#" }) {
 
 export function LogoSiSegar(){
     return (
-        <div className='w-[2rem] md:w-[2.5rem] h-[2rem] md:h-[2.5rem] rounded-3xl overflow-hidden mr-[1rem]'>
+        <div className='w-[2.4rem] md:w-[2.5rem] h-[2.4rem] md:h-[2.5rem] rounded-3xl overflow-hidden mr-[1rem]'>
             <img src={logoSiSegar} alt="" className='w-full h-full object-cover'/>
         </div>
     )
 }
 
-export function InputComponent( {nameLabel, idForm, typeInput, placeholder, marginForm, isRequired}){
+export function InputComponent( {nameLabel, idForm, typeInput, placeholder, marginForm, isRequired, value, onChange}){
 
     if (isRequired){
         return (
             <>
                 <div className={`w-full h-[8vh] ${marginForm}`}>
-                    <label htmlFor={idForm} className='font-montserrat font-bold text-parsley-600 text-[16px] lg:text-[12px] pl-4 mb-2'>{nameLabel}</label>
-                    <input type={typeInput} id={idForm} placeholder={placeholder} className='w-full h-[calc(100%_-_24px)] rounded-2xl bg-parsley-300 font-montserrat text-[20px] lg:text-[16px] p-4 text-parsley-600 placeholder:font-bold placeholder:text-parsley-600' required />
+                    <label htmlFor={idForm} className='font-montserrat font-bold text-parsley-600 text-[12px] md:text-[14px] pl-4 mb-2'>{nameLabel}</label>
+                    <input 
+                        type={typeInput} 
+                        id={idForm} 
+                        placeholder={placeholder} 
+                        className='w-full h-[calc(100%_-_24px)] rounded-2xl bg-parsley-300 font-montserrat text-[14px] md:text-[16px] p-4 text-parsley-600 placeholder:font-bold placeholder:text-parsley-600' 
+                        required
+                        value={value}
+                        onChange={onChange}
+
+                    />
                 </div>
             </>
         )
@@ -38,8 +47,16 @@ export function InputComponent( {nameLabel, idForm, typeInput, placeholder, marg
         return (
             <>
                 <div className={`w-full h-[8vh] ${marginForm}`}>
-                    <label htmlFor={idForm} className='font-montserrat font-bold text-parsley-600 text-[16px] lg:text-[12px] pl-4 mb-2'>{nameLabel}</label>
-                    <input type={typeInput} id={idForm} placeholder={placeholder} className='w-full h-[calc(100%_-_24px)] rounded-2xl bg-parsley-300 font-montserrat text-[20px] lg:text-[16px] p-4 text-parsley-600 placeholder:font-bold placeholder:text-parsley-600' />
+                    <label htmlFor={idForm} className='font-montserrat font-bold text-parsley-600 text-[12px] md:text-[14px] pl-4 mb-2'>{nameLabel}</label>
+                    <input 
+                        type={typeInput} 
+                        id={idForm} 
+                        placeholder={placeholder} 
+                        className='w-full h-[calc(100%_-_24px)] rounded-2xl bg-parsley-300 font-montserrat text-[14px] md:text-[16px] p-4 text-parsley-600 placeholder:font-bold placeholder:text-parsley-600' 
+                        value={value}
+                        onChange={onChange}
+
+                    />
                 </div>
             </>
         )
@@ -52,8 +69,8 @@ export function TextAreaComponent( {nameLabel, idForm, typeInput, placeholder, m
         return (
             <>
                 <div className={`w-full h-[15vh] ${marginForm}`}>
-                    <label htmlFor={idForm} className='font-montserrat font-bold text-parsley-600 text-[16px] pl-4 mb-2'>{nameLabel}</label>
-                    <textarea type={typeInput} id={idForm}  required placeholder={placeholder} className={`w-full h-[calc(100%_-_24px)] resize-none rounded-2xl ${bgInput} font-montserrat text-[20px] p-4 text-parsley-600 placeholder:font-bold placeholder:text-parsley-600`}></textarea>
+                    <label htmlFor={idForm} className='font-montserrat font-bold text-parsley-600 text-[12px] md:text-[14px] pl-4 mb-2'>{nameLabel}</label>
+                    <textarea type={typeInput} id={idForm}  required placeholder={placeholder} className={`w-full h-[calc(100%_-_24px)] resize-none rounded-2xl ${bgInput} font-montserrat text-[14px] md:text-[16px] p-4 text-parsley-600 placeholder:font-bold placeholder:text-parsley-600`}></textarea>
                 </div>
             </>
         )
@@ -61,8 +78,8 @@ export function TextAreaComponent( {nameLabel, idForm, typeInput, placeholder, m
         return (
             <>
                 <div className={`w-full h-[15vh] ${marginForm}`}>
-                    <label htmlFor={idForm} className='font-montserrat font-bold text-parsley-600 text-[16px] pl-4 mb-2'>{nameLabel}</label>
-                    <textarea type={typeInput} id={idForm} placeholder={placeholder} className={`w-full h-[calc(100%_-_24px)] resize-none rounded-2xl ${bgInput} font-montserrat text-[20px] p-4 text-parsley-600 placeholder:font-bold placeholder:text-parsley-6001`}></textarea>
+                    <label htmlFor={idForm} className='font-montserrat font-bold text-parsley-600 text-[12px] md:text-[14px] pl-4 mb-2'>{nameLabel}</label>
+                    <textarea type={typeInput} id={idForm} placeholder={placeholder} className={`w-full h-[calc(100%_-_24px)] resize-none rounded-2xl ${bgInput} font-montserrat text-[14px] md:text-[16px] p-4 text-parsley-600 placeholder:font-bold placeholder:text-parsley-6001`}></textarea>
                 </div>
             </>
         )

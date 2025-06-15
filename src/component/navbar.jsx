@@ -65,31 +65,31 @@ function NavbarSideList( {navbarListName}){
           <a href="#" className="font-montserrat text-parsley-900 font-bold">{navbarListName}</a>
         </div>
         <div className={`w-full h-fit ${AkunOpen ? "block" : "hidden"}`}>
-          <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-200 before:content-[''] before:absolute before:w-1.5 before:h-full before:bg-parsley-900 before:left-0 relative">
-            <a href="#" className="font-montserrat text-parsley-900 font-bold">Log-in</a>
+          <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-200">
+            <Link to="/daftar-akun" className="font-montserrat text-parsley-900 md:text-[16px] font-bold">Daftar</Link>
           </div>
-          <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-200 before:content-[''] before:absolute before:w-1.5 before:h-full before:bg-parsley-900 before:left-0 relative">
-            <a href="#" className="font-montserrat text-parsley-900 font-bold">Register</a>
-          </div>
-        </div>
-      </div>
-    )
-  } else if (navbarListName == "Akun Anda") {
-    return (
-      <div>
-        <div className="w-full h-[5vh] bg-parsley-200 flex items-center justify-center transition-colors duration-200" onClick={openAkun}>
-          <a href="#" className="font-montserrat text-parsley-900 font-bold">{navbarListName}</a>
-        </div>
-        <div className={`w-full h-fit ${AkunOpen ? "block" : "hidden"}`}>
-          <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-200 before:content-[''] before:absolute before:w-1.5 before:h-full before:bg-parsley-900 before:left-0 relative">
-            <a href="#" className="font-montserrat text-parsley-900 font-bold">Profile</a>
-          </div>
-          <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-200 before:content-[''] before:absolute before:w-1.5 before:h-full before:bg-parsley-900 before:left-0 relative">
-            <a href="#" className="font-montserrat text-parsley-900 font-bold">Log-Out</a>
+          <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-200">
+            <Link to="/masuk-akun" className="font-montserrat text-parsley-900 md:text-[16px] font-bold">Masuk</Link>
           </div>
         </div>
       </div>
     )
+  // } else if (navbarListName == "Akun Anda") {
+  //   return (
+  //     <div>
+  //       <div className="w-full h-[5vh] bg-parsley-200 flex items-center justify-center transition-colors duration-200" onClick={openAkun}>
+  //         <a href="#" className="font-montserrat text-parsley-900 font-bold">{navbarListName}</a>
+  //       </div>
+  //       <div className={`w-full h-fit ${AkunOpen ? "block" : "hidden"}`}>
+  //         <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-200 before:content-[''] before:absolute before:w-1.5 before:h-full before:bg-parsley-900 before:left-0 relative">
+  //           <a href="#" className="font-montserrat text-parsley-900 font-bold">Profile</a>
+  //         </div>
+  //         <div className="w-full h-[5vh] bg-parsley-50 flex items-center justify-center transition-colors duration-200 before:content-[''] before:absolute before:w-1.5 before:h-full before:bg-parsley-900 before:left-0 relative">
+  //           <a href="#" className="font-montserrat text-parsley-900 font-bold">Log-Out</a>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   )
   } else {
     return (
       <div className="w-full h-[5vh] bg-parsley-200 flex items-center justify-center transition-colors duration-200">
@@ -115,18 +115,18 @@ export default function NavbarContainer() {
           <LogoSiSegar/>
           <p className="text-parsley-950 font-bold text-2xl font-montserrat">siSegar</p>
         </div>
-        <div className="hidden lg:block lg:w-[40%] lg:h-full lg:flex lg:items-center lg:justify-around">
-          <Link to="/" className="font-montserrat text-[16px] text-parsley-600">Beranda</Link>
+        <div className="hidden lg:w-[40%] lg:h-full lg:flex lg:items-center lg:justify-around">
+          <Link to="/" className="relative font-montserrat text-[16px] text-parsley-600 before:content-[''] before:w-full before:h-0.5 before:bg-parsley-600 before:scale-x-0 hover:before:scale-x-100 before:transition-all before:duration-[0.5s] before:absolute before:bottom-0">Beranda</Link>
           <div className="w-fit h-fit relative">
-            <p className="font-montserrat text-[16px] text-parsley-600">Tentang</p>
+            <p className="font-montserrat text-[16px] cursor-pointer text-parsley-600 before:content-[''] before:w-full before:h-0.5 before:bg-parsley-600 before:scale-x-0 hover:before:scale-x-100 before:transition-all before:duration-[0.5s] before:absolute before:bottom-0">Tentang</p>
             <div className=""></div>
           </div>
-          <Link to="/blog" className="font-montserrat text-[16px] text-parsley-600">Blog</Link>
-          <div className="w-fit h-fit">
-            <p className="font-montserrat text-[16px] text-parsley-600">Layanan</p>
+          <Link to="/blog" className="relative font-montserrat text-[16px] text-parsley-600 before:content-[''] before:w-full before:h-0.5 before:bg-parsley-600 before:scale-x-0 hover:before:scale-x-100 before:transition-all before:duration-[0.5s] before:absolute before:bottom-0">Blog</Link>
+          <div className="w-fit h-fit relative">
+            <p className="font-montserrat text-[16px] cursor-pointer text-parsley-600 before:content-[''] before:w-full before:h-0.5 before:bg-parsley-600 before:scale-x-0 hover:before:scale-x-100 before:transition-all before:duration-[0.5s] before:absolute before:bottom-0">Layanan</p>
           </div>
         </div>
-        <div className="hidden lg:block lg:w-[20%] lg:h-full lg:flex lg:items-center lg:justify-around">
+        <div className="hidden lg:w-[25%] lg:h-full lg:flex lg:items-center lg:justify-around">
           <Link to="/daftar-akun" className="inline-block h-fit w-fit p-2 px-4 rounded-xl bg-parsley-600 hover:bg-parsley-600/50 text-parsley-50 hover:text-parsley-600 font-bold font-montserrat ">Daftar</Link>
           <Link to="/masuk-akun" className="inline-block h-fit w-fit p-2 px-4 rounded-xl bg-parsley-600/50 hover:bg-parsley-600 text-parsley-600 hover:text-parsley-50 font-bold font-montserrat ">Masuk</Link>
         </div>

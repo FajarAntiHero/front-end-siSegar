@@ -11,7 +11,7 @@ export default function ShowCommunityUser(){
                         <p className="font-montserrat text-3xl md:text-[2.5rem] font-bold bg-gradient-to-r from-parsley-950 via-parsley-700 to-parsley-500 text-transparent bg-clip-text">Komunitas Kamu</p>
                     </div>
                     <div className="w-full md:w-[80%] lg:w-[50%] md:mx-auto h-[70%] lg:h-full p-4 lg:flex lg:flex-col lg:items-center lg:justify-center">
-                        <div className="w-full w-[80%] lg:w-[80%] h-[20%] px-4 flex justify-center items-center">
+                        <div className="w-full lg:w-[80%] h-[20%] px-4 flex justify-center items-center">
                             <MenuDashboard bgMenu={"bg-parsley-50"}/>
                         </div>
                         <div className="w-full lg:w-[80%] h-[80%] rounded-2xl overflow-y-scroll">
