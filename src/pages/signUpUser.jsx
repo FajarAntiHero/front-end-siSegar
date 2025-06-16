@@ -86,16 +86,6 @@ export default function SignUpUser(){
         setError('');
         setSuccess('');
 
-        // const registrationData = {
-        //     username,
-        //     email,
-        //     password,
-        //     password2, // Pastikan Anda punya state ini
-        // };
-
-        // // --- Tambahkan console.log() di sini ---
-        // console.log("Data yang akan dikirim ke backend:", registrationData);
-        // // ------------------------------------
         try {
         // Endpoint register backend Anda
             const response = await axiosInstance.post('/register/', {

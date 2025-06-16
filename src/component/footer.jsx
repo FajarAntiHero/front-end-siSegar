@@ -35,8 +35,8 @@ export default function FooterContainer() {
                 <div className="w-full h-fit bg-parsley-100">
                     <p className="text-[16px] text-center font-bold text-parsley-950 mb-3 font-montserrat">Sosial Media siSegar</p>
                     <div className="w-full h-fit gap-2 flex justify-center">
-                        {socialIcons.map((icon) => (
-                        <IconApp height={"h-[2.5rem]"} width={"w-[2.5rem]"} nameIcon={icon}/>
+                        {socialIcons.map((icon, index) => (
+                        <IconApp key={index} height={"h-[2.5rem]"} width={"w-[2.5rem]"} nameIcon={icon} sizeIcon={"1"}/>
                         ))}
                     </div>
                 </div>

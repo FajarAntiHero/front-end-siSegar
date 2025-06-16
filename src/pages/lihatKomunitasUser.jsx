@@ -12,7 +12,7 @@ export default function ShowCommunityUser(){
                     </div>
                     <div className="w-full md:w-[80%] lg:w-[50%] md:mx-auto h-[70%] lg:h-full p-4 lg:flex lg:flex-col lg:items-center lg:justify-center">
                         <div className="w-full lg:w-[80%] h-[20%] px-4 flex justify-center items-center">
-                            <MenuDashboard bgMenu={"bg-parsley-50"}/>
+                            <MenuDashboard bgMenu={"bg-parsley-50"}  position={"top-[1.5rem"}/>
                         </div>
                         <div className="w-full lg:w-[80%] h-[80%] rounded-2xl overflow-y-scroll">
                             <CardDashboard/>

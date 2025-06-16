@@ -16,7 +16,7 @@ export default function MainDashboard(){
                     </div>
                     <div className="w-[90%] md:w-[80%] lg:w-[60%] h-[10%] bg-parsley-50 rounded-2xl"></div>
                 </div>
-                <MenuDashboard bgMenu={"bg-parsley-300"}/>
+                <MenuDashboard bgMenu={"bg-parsley-300"}  position={"bottom-[2rem]"}/>
             </div>
         </>
     )

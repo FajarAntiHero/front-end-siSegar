@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { LogoSiSegar } from "./utils";
 import { Link } from "react-router-dom";
+import laut_1 from "../assets/images/Content Web SiSegar/laut_1.jpg";
+import sawah_5 from "../assets/images/Content Web SiSegar/sawah_5.jpg";
 
 function NavbarSideList( {navbarListName}){
 
@@ -101,13 +103,32 @@ export default function NavbarContainer() {
         </div>
         <div className="hidden lg:w-[40%] lg:h-full lg:flex lg:items-center lg:justify-around">
           <Link to="/" className="relative font-montserrat text-[16px] text-parsley-600 before:content-[''] before:w-full before:h-0.5 before:bg-parsley-600 before:scale-x-0 hover:before:scale-x-100 before:transition-all before:duration-[0.5s] before:absolute before:bottom-0">Beranda</Link>
-          <div className="w-fit h-fit relative">
+          <div className="w-fit h-fit relative group">
             <p className="font-montserrat text-[16px] cursor-pointer text-parsley-600 before:content-[''] before:w-full before:h-0.5 before:bg-parsley-600 before:scale-x-0 hover:before:scale-x-100 before:transition-all before:duration-[0.5s] before:absolute before:bottom-0">Tentang</p>
-            <div className=""></div>
+            <div className="w-[300px] h-[150px] hidden bg-parsley-400 rounded-2xl absolute top-[1.5rem] p-3 group-hover:flex group-hover:justify-between">
+              <div className="w-[65%] h-full flex flex-col justify-between">
+                <div className="w-full h-[45%] flex items-center justify-center p-2 bg-parsley-100 hover:bg-parsley-50 rounded-xl font-montserrat font-bold text-parsley-600 mb-2"><Link to={"/tentang/sisegar"}>siSegar</Link></div>
+                <div className="w-full h-[45%] flex items-center justify-center p-2 bg-parsley-100 hover:bg-parsley-50 rounded-xl font-montserrat font-bold text-parsley-600 "><Link to={"/tentang/sisegar-developer"}>siSegar Developer</Link></div>
+              </div>
+              <div className="w-[30%] h-full rounded-xl overflow-hidden">
+                <img src={laut_1} alt="" className="w-full h-full object-cover bg-parsley-500"/>
+              </div>
+            </div>
           </div>
           <Link to="/blog" className="relative font-montserrat text-[16px] text-parsley-600 before:content-[''] before:w-full before:h-0.5 before:bg-parsley-600 before:scale-x-0 hover:before:scale-x-100 before:transition-all before:duration-[0.5s] before:absolute before:bottom-0">Blog</Link>
-          <div className="w-fit h-fit relative">
+          <div className="w-fit h-fit relative group">
             <p className="font-montserrat text-[16px] cursor-pointer text-parsley-600 before:content-[''] before:w-full before:h-0.5 before:bg-parsley-600 before:scale-x-0 hover:before:scale-x-100 before:transition-all before:duration-[0.5s] before:absolute before:bottom-0">Layanan</p>
+            <div className="w-[350px] h-[300px] hidden  group-hover:flex bg-parsley-400 rounded-2xl absolute top-[1.5rem] p-3 group-hover:justify-between">
+              <div className="w-[65%] h-full flex flex-col justify-between">
+                <div className="w-full h-[20%] flex items-center justify-center p-2 bg-parsley-100 hover:bg-parsley-50 rounded-xl font-montserrat font-bold text-parsley-600"><Link to={"/layanan/komunitas"}>Komunitas</Link></div>
+                <div className="w-full h-[20%] flex items-center justify-center p-2 bg-parsley-100 hover:bg-parsley-50 rounded-xl font-montserrat font-bold text-parsley-600"><Link to={"/layanan/acara"}>Acara</Link></div>
+                <div className="w-full h-[20%] flex items-center justify-center p-2 bg-parsley-100 hover:bg-parsley-50 rounded-xl font-montserrat font-bold text-parsley-600"><Link to={"/layanan/deteksi sampah"}>Deteksi Sampah</Link></div>
+                <div className="w-full h-[20%] flex items-center justify-center p-2 bg-parsley-100 hover:bg-parsley-50 rounded-xl font-montserrat font-bold text-parsley-600"><Link to={"/layanan/kontak"}>Kontak siSegar</Link></div>
+              </div>
+              <div className="w-[30%] h-full rounded-xl overflow-hidden">
+                <img src={sawah_5} alt="" className="w-full h-full object-cover bg-parsley-500"/>
+              </div>
+            </div>
           </div>
         </div>
         <div className="hidden lg:w-[25%] lg:h-full lg:flex lg:items-center lg:justify-around">

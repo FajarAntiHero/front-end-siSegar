@@ -1,6 +1,10 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import FooterContainer from "../component/footer";
 import NavbarContainer from "../component/navbar";
 import sawah_3 from "../assets/images/Content Web SiSegar/sawah_3.jpg";
+import { ShowError, ShowLoading, ShowResult } from '../services/processData';
+import { EventCard } from "../component/blogCard";
 
 function Hero(){
     return (
@@ -18,17 +22,45 @@ function Hero(){
 }
 
 function Content(){
+    const [acara, setAcara] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchAcara = async () => {
+        try {
+            // Panggil endpoint API publik untuk daftar acara
+            // Sesuaikan URL jika backend Anda tidak berjalan di port 8000 atau domain berbeda
+            const response = await axios.get('http://127.0.0.1:8000/api/acara/public/');
+            setAcara(response.data.results);
+        } catch (err) {
+            setError(err);
+            console.error("Error fetching public Blog:", err);
+        } finally {
+            setLoading(false);
+        }
+        };
+
+        fetchAcara();
+    }, []); // Array kosong berarti useEffect hanya berjalan sekali setelah render pertama
+
     return (
         <>
             <div className="w-full h-fit p-6 bg-parsley-200">
                 <div className="w-full md:w-[75%] lg:w-[70%] md:mx-auto h-fit">
-                    <div className="w-full h-[20vh]">
+                    <div className="w-full h-[20vh] mb-6">
                         <form action="" className="w-full h-full flex flex-col justify-center">
                             <input type="text" name="" className="w-full lg:w-[80%] h-fit text-[24px] lg:mx-auto p-4 lg:py-2  mb-4 font-montserrat bg-parsley-50 text-parsley-600 rounded-2xl placeholder:font-bold placeholder:text-parsley-600" placeholder="Cari Nama Acara"/>
                             <button className="w-full lg:w-[80%] h-fit py-3 lg:py-2 lg:mx-auto text-[20px] font-bold font-montserrat bg-parsley-700 text-parsley-50 rounded-2xl">Cari Acara</button>
                         </form>
                     </div>
-                    <div className="w-full h-fit"></div>
+                    {loading ? (
+                        <ShowLoading />
+                    ) : error ? (
+                        <ShowError message={error} />
+                    ) : (
+                        <ShowResult data={acara} nameCard={"acara"} />
+                    )}
                 </div>
             </div>
         </>

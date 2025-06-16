@@ -1,5 +1,8 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import FooterContainer from "../component/footer";
 import NavbarContainer from "../component/navbar";
+import { ShowError, ShowLoading, ShowResult } from '../services/processData';
 import laut_4 from "../assets/images/Content Web SiSegar/laut_4.jpg";
 
 function Hero(){
@@ -18,7 +21,51 @@ function Hero(){
 }
 
 function Content(){
-    
+    const [blog, setBlog] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchBlog = async () => {
+        try {
+            // Panggil endpoint API publik untuk daftar acara
+            // Sesuaikan URL jika backend Anda tidak berjalan di port 8000 atau domain berbeda
+            const response = await axios.get('http://127.0.0.1:8000/api/blog/public/');
+            setBlog(response.data.results);
+        } catch (err) {
+            setError(err);
+            console.error("Error fetching public Blog:", err);
+        } finally {
+            setLoading(false);
+        }
+        };
+
+        fetchBlog();
+    }, []); // Array kosong berarti useEffect hanya berjalan sekali setelah render pertama
+
+    return (
+        <>
+            <div className="w-full h-fit p-6 bg-parsley-200">
+                <div className="w-full md:w-[75%] md:mx-auto h-fit">
+                    <div className="w-full h-[20vh] mb-6">
+                        <form action="" className="w-full h-full flex flex-col justify-center">
+                            <input type="text" name="" className="w-full lg:w-[80%] h-fit text-[24px] lg:mx-auto p-4 lg:py-2  mb-4 font-montserrat bg-parsley-50 text-parsley-600 rounded-2xl placeholder:font-bold placeholder:text-parsley-600" placeholder="Cari Judul Blog"/>
+                            <button className="w-full lg:w-[80%] h-fit py-3 lg:py-2 lg:mx-auto text-[20px] font-bold font-montserrat bg-parsley-700 text-parsley-50 rounded-2xl">Cari Blog</button>
+                        </form>
+                    </div>
+                    <div className="w-full h-fit md:flex md:flex-wrap md:justify-around ">
+                        {loading ? (
+                            <ShowLoading />
+                        ) : error ? (
+                            <ShowError message={error} />
+                        ) : (
+                            <ShowResult data={blog} nameCard={"blog"} />
+                        )}
+                    </div>
+                </div>
+            </div>
+        </>
+    )   
 }
 
 export default function Blog(){
@@ -26,6 +73,7 @@ export default function Blog(){
         <>
             <NavbarContainer/>
             <Hero/>
+            <Content/>
             <FooterContainer/>
         </>
     )

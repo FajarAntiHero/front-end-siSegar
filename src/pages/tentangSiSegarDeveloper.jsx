@@ -1,6 +1,9 @@
 import FooterContainer from "../component/footer";
 import NavbarContainer from "../component/navbar";
 import air_terjun from "../assets/images/Content Web SiSegar/air_terjun.jpg";
+import flower from "../assets/images/assest png/flower-1.png"
+import fotoFarid from "../assets/images/foto_farid.jpg"
+import fotoRidho from "../assets/images/foto_ridho.jpg"
 
 function Hero(){
     return (
@@ -20,13 +23,15 @@ function Hero(){
 function Content(){
 
     const listData = [
-        {image: '', titleCard: "Fajar Maulana", messageCard: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis recusandae debitis quaerat?"},
-        {image: '', titleCard: "Farid Rahmat Alfiansyah", messageCard: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis recusandae debitis quaerat?"},
-        {image: '', titleCard: "Ridho Kurnia Aji", messageCard: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis recusandae debitis quaerat?"}
+        {image: null, titleCard: "Fajar Maulana", messageCard: "Front End, Back End, UI Design"},
+        {image: fotoFarid, titleCard: "Farid Rahmat Alfiansyah", messageCard: "Front End, Ui Design"},
+        {image: fotoRidho, titleCard: "Ridho Kurnia Aji", messageCard: "UI Design, SEO"}
     ]
     return (
         <div className="w-full h-fit lg:h-[90vh] lg:flex lg:justify-center lg:items-center bg-parsley-50">
-            <div className="w-full h-fit md:w-[75%] lg:w-[60%] md:mx-auto p-6 pt-8">
+            <div className="w-full h-fit md:w-[75%] lg:w-[60%] md:mx-auto p-6 pt-8 relative">
+                <img src={flower} alt="flower" className='w-[2rem] md:w-[3rem] h-[2rem] md:h-[3rem] absolute z-0 top-[2rem] left-[2rem]'/>
+                <img src={flower} alt="flower" className='w-[3rem] md:w-[4rem] md:h-[4rem] h-[3rem] absolute z-0 top-[2rem] right-[2rem]'/>
                 <div className="w-full h-fit mt-[3rem] mb-[2rem]">
                     <p className="font-montserrat text-center mb-[1rem] font-bold text-parsley-950 text-[28px]">siSegar Membagikan Ide Hebatmu</p>
                     <p className="font-montserrat text-center text-parsley-600 text-[16px]">

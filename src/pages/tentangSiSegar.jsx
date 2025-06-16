@@ -3,6 +3,7 @@ import NavbarContainer from "../component/navbar";
 import sawah_2 from "../assets/images/Content Web SiSegar/sawah_2.jpg";
 import daun_tanaman_2 from "../assets/images/Content Web SiSegar/daun_tanaman_2.jpg";
 import useScrollAnimation from "../component/useScrollAnimation";
+import flower from "../assets/images/assest png/flower-1.png"
 
 function Hero(){
     const heroContent = useScrollAnimation({})
@@ -32,13 +33,17 @@ function Content(){
         <>  
             <div className="w-full h-fit bg-parsley-50">
                 <div className="w-full h-fit md:w-[75%] lg:w-[60%] md:mx-auto pt-8 bg-parsley-50 ">
-                    <div ref={firstContent} className="container h-[90vh] flex flex-col justify-center items:center px-6 mb-[2rem]">
+                    <div ref={firstContent} className="container h-[90vh] flex flex-col justify-center items:center px-6 mb-[2rem] relative">
+                        <img src={flower} alt="flower" className='w-[5rem] h-[5rem] absolute z-0 top-[4rem] right-[3rem]'/>
+                        <img src={flower} alt="flower" className='w-[4rem] h-[4rem] absolute z-0 bottom-[4rem] left-[2rem]'/>
                         <p className="font-montserrat text-center mb-[1rem] font-bold text-parsley-600 text-[28px]">Apa itu siSegar?</p>
                         <p className="font-montserrat text-center text-parsley-500 text-[16px]">
                             siSegar adalah sebuah platform digital yang didedikasikan untuk mewujudkan lingkungan hidup yang lebih sehat, hijau, dan berkelanjutan bagi semua.
                         </p>
                     </div>
-                    <div ref={secondContent} className="container h-[90vh] flex flex-col justify-center items:center px-6 mb-[2rem]">
+                    <div ref={secondContent} className="container h-[90vh] flex flex-col justify-center items:center px-6 mb-[2rem] relative">
+                        <img src={flower} alt="flower" className='w-[5rem] h-[5rem] absolute z-0 top-[4rem] left-[3rem]'/>
+                        <img src={flower} alt="flower" className='w-[4rem] h-[4rem] absolute z-0 bottom-[5rem] right-[2rem]'/>
                         <p className="font-montserrat text-center mb-[1rem] font-bold text-parsley-600 text-[28px]">Misi siSegar</p>
                         <p className="font-montserrat text-center text-parsley-500 text-[16px] mb-3">
                             Misi kami adalah <strong>mendorong kesadaran dan partisipasi aktif </strong> dalam menjaga kelestarian lingkungan. 
@@ -60,7 +65,9 @@ function Content(){
                             </p>
                         </div>
                     </div>
-                    <div ref={fourthContent} className="container h-[90vh] flex flex-col justify-center items:center px-6 mb-[2rem]">
+                    <div ref={fourthContent} className="container h-[90vh] flex flex-col justify-center items:center px-6 mb-[2rem] relative">
+                        <img src={flower} alt="flower" className='w-[5rem] h-[5rem] absolute z-0 top-[4rem] right-[3rem]'/>
+                        <img src={flower} alt="flower" className='w-[4rem] h-[4rem] absolute z-0 bottom-[4rem] left-[2rem]'/>
                         <p className="font-montserrat text-center mb-[1rem] font-bold text-parsley-600 text-[28px]">Cerita siSegar</p>
                         <p className="font-montserrat text-center text-parsley-500 text-[16px] mb-3">
                             siSegar lahir dari kepedulian mendalam terhadap tantangan lingkungan yang kita hadapi saat ini. Kami melihat potensi luar biasa dalam kolaborasi dan teknologi untuk mengatasi masalah tersebut. 

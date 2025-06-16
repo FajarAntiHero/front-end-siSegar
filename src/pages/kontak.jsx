@@ -6,11 +6,13 @@ import kebon_3 from "../assets/images/Content Web SiSegar/kebon_3.jpg";
 import useScrollAnimation from "../component/useScrollAnimation";
 
 function Hero(){
+    const contactHeader = useScrollAnimation({})
+
     return (
         <>
             <div className={`w-full h-[90vh] relative flex items-center justify-center p-[3rem]`}>
                 <img src={kebon_3} alt="" className="h-full w-full object-cover absolute top-0 bottom-0 left-0 right-0"/>
-                <div className="relative z-20 w-full h-[80%] md:w-[80%] lg:h-[70&] p-4 md:p-6 lg:p-8 bg-white/15 backdrop-blur-sm rounded-xl shadow-lg border-[2px] border-white/15 text-white flex flex-col items-center justify-center overflow-hidden transform transition-all duration-300 hover:scale-[1.01] cursor-pointer">
+                <div ref={contactHeader} className="relative z-20 w-full h-[80%] md:w-[80%] lg:h-[70&] p-4 md:p-6 lg:p-8 bg-white/15 backdrop-blur-sm rounded-xl shadow-lg border-[2px] border-white/15 text-white flex flex-col items-center justify-center overflow-hidden transform transition-all duration-300 hover:scale-[1.01] cursor-pointer">
                     <p className="font-montserrat font-bold text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] text-center mb-4 text-parsley-950">Berdayakan Dirimu, Selamatkan Bumi</p>
                     <p className="font-montserrat text-[1rem] md:text-[1.3rem] lg:text-[1.5rem] text-parsley-900 text-center">siSegar menyediakan pengetahuan dan wadah bagi Anda untuk memahami, bertindak, dan membuat perbedaan nyata bagi lingkungan.</p>
                 </div>
@@ -26,8 +28,6 @@ function KontakForm(){
     const [titleUser, setTitleUser] = useState("")
     const [emailUser, setEmailUser] = useState("")
     const [messageUser, setMessageUser] = useState("")
-    const contactForm = useScrollAnimation({})
-    const contactHeader = useScrollAnimation({})
 
     const yearNow = new Date()
 
@@ -72,7 +72,7 @@ function KontakForm(){
         <>
             <div className="w-full h-fit">
                 <div className="w-full md:w-[75%] lg:w-[60%] md:mx-auto h-fit p-6">
-                    <div ref={contactHeader} className="w-full h-fit mt-[3rem] mb-[2rem]">
+                    <div  className="w-full h-fit mt-[3rem] mb-[2rem]">
                         <p className="font-montserrat text-center mb-[1rem] font-bold text-parsley-950 text-[28px]">
                             Hubungi Tim Kami
                         </p>
@@ -80,7 +80,7 @@ function KontakForm(){
                             Saatnya mewujudkan lingkungan sehat impianmu dengan belajar dan tumbuh, bersama mereka yang memiliki tujuan serupa.
                         </p>
                     </div>
-                    <div ref={contactForm} className="h-fit w-full bg-parsley-300 rounded-2xl">
+                    <div className="h-fit w-full bg-parsley-300 rounded-2xl">
                         <form onSubmit={handleSubmit} className="w-full h-fit p-5 box-border">
                             <div className="w-full h-[10vh] lg:[15vh] mb-3">
                                 <label htmlFor="name-user" className="font-montserrat font-bold text-parsley-600 text-[16px] pl-3">Nama Pengguna</label>
