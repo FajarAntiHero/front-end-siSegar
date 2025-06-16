@@ -82,54 +82,80 @@ function KontakForm(){
                     </div>
                     <div className="h-fit w-full bg-parsley-300 rounded-2xl">
                         <form onSubmit={handleSubmit} className="w-full h-fit p-5 box-border">
-                            <div className="w-full h-[10vh] lg:[15vh] mb-3">
-                                <label htmlFor="name-user" className="font-montserrat font-bold text-parsley-600 text-[16px] pl-3">Nama Pengguna</label>
-                                <input 
-                                    type="text" 
-                                    id="name-user" 
-                                    name="name-user" 
-                                    placeholder="Nama Kamu"
-                                    value={nameUser}
-                                    onChange={(e) => setNameUser(e.target.value)} 
-                                    className="block rounded-2xl w-full h-[calc(100%_-_36px)] lg:h-[calc(100%_-_24px)] bg-parsley-50 px-5 font-montserrat font-bold text-[20px] text-parsley-600 placeholder:text-parsley-600/50 placeholder:font-bold placeholder:font-montserrat"/>
+                            
+                            {/* Nama Pengguna */}
+                            <div className="w-full h-[10vh] lg:h-[15vh] mb-3">
+                            <label htmlFor="name-user" className="font-montserrat font-bold text-parsley-600 text-[16px] pl-3">
+                                Nama Pengguna
+                            </label>
+                            <input 
+                                type="text" 
+                                id="name-user" 
+                                name="name-user" 
+                                placeholder="Nama Kamu"
+                                required
+                                value={nameUser}
+                                onChange={(e) => setNameUser(e.target.value)} 
+                                className="block rounded-2xl w-full h-[calc(100%_-_36px)] lg:h-[calc(100%_-_24px)] bg-parsley-50 px-5 font-montserrat font-bold text-[20px] text-parsley-600 placeholder:text-parsley-600/50 placeholder:font-bold placeholder:font-montserrat focus:outline-none focus:ring-2 focus:ring-parsley-600"
+                            />
                             </div>
-                            <div className="w-full h-[10vh] l mb-3">
-                                <label htmlFor="judul-email" className="font-montserrat font-bold text-parsley-600 text-[16px] pl-3">Judul Email</label>
-                                <input 
-                                    type="text" 
-                                    id="judul-email" 
-                                    name="judul-email" 
-                                    placeholder="Judul Email Kamu"
-                                    value={titleUser}
-                                    onChange={(e) => setTitleUser(e.target.value)} 
-                                    className="block rounded-2xl w-full h-[calc(100%_-_36px)] lg:h-[calc(100%_-_24px)] bg-parsley-50 px-5 font-montserrat font-bold text-[20px] text-parsley-600 placeholder:text-parsley-600/50 placeholder:font-bold placeholder:font-montserrat"/>
+
+                            {/* Judul Email */}
+                            <div className="w-full h-[10vh] lg:h-[15vh] mb-3">
+                            <label htmlFor="judul-email" className="font-montserrat font-bold text-parsley-600 text-[16px] pl-3">
+                                Judul Email
+                            </label>
+                            <input 
+                                type="text" 
+                                id="judul-email" 
+                                name="judul-email" 
+                                placeholder="Judul Email Kamu"
+                                required
+                                value={titleUser}
+                                onChange={(e) => setTitleUser(e.target.value)} 
+                                className="block rounded-2xl w-full h-[calc(100%_-_36px)] lg:h-[calc(100%_-_24px)] bg-parsley-50 px-5 font-montserrat font-bold text-[20px] text-parsley-600 placeholder:text-parsley-600/50 placeholder:font-bold placeholder:font-montserrat focus:outline-none focus:ring-2 focus:ring-parsley-600"
+                            />
                             </div>
-                            <div className="w-full h-[10vh] l mb-3">
-                                <label htmlFor="akun-email" className="font-montserrat font-bold text-parsley-600 text-[16px] pl-3">Akun Email</label>
-                                <input 
-                                    type="text" 
-                                    id="akun-email" 
-                                    name="akun-email" 
-                                    placeholder="Nama Akun Email Kamu"
-                                    value={emailUser} 
-                                    onChange={(e) => setEmailUser(e.target.value)}
-                                    className="block rounded-2xl w-full h-[calc(100%_-_36px)] lg:h-[calc(100%_-_24px)] bg-parsley-50 px-5 font-montserrat font-bold text-[20px] text-parsley-600 placeholder:text-parsley-600/50 placeholder:font-bold placeholder:font-montserrat"/>
+
+                            {/* Akun Email */}
+                            <div className="w-full h-[10vh] lg:h-[15vh] mb-3">
+                            <label htmlFor="akun-email" className="font-montserrat font-bold text-parsley-600 text-[16px] pl-3">
+                                Akun Email
+                            </label>
+                            <input 
+                                type="text" 
+                                id="akun-email" 
+                                name="akun-email" 
+                                placeholder="Nama Akun Email Kamu"
+                                required
+                                value={emailUser}
+                                onChange={(e) => setEmailUser(e.target.value)} 
+                                className="block rounded-2xl w-full h-[calc(100%_-_36px)] lg:h-[calc(100%_-_24px)] bg-parsley-50 px-5 font-montserrat font-bold text-[20px] text-parsley-600 placeholder:text-parsley-600/50 placeholder:font-bold placeholder:font-montserrat focus:outline-none focus:ring-2 focus:ring-parsley-600"
+                            />
                             </div>
+
+                            {/* Pesan Email */}
                             <div className="w-full h-[45vh] mb-5">
-                                <label htmlFor="pesan-email" className="font-montserrat font-bold text-parsley-600 text-[16px] pl-3">Pesan Email</label>
-                                <textarea 
-                                    name="pesan-email" 
-                                    id="pesan-email" 
-                                    placeholder="Isi Email Kamu.."
-                                    value={messageUser}
-                                    onChange={(e) => setMessageUser(e.target.value)}
-                                    className="block resize-none rounded-2xl w-full h-[calc(100%_-_36px)] bg-parsley-50 font-montserrat p-5 text-[20px] text-parsley-600 placeholder:text-parsley-600/50 placeholder:font-bold placeholder:font-montserrat"></textarea>
+                            <label htmlFor="pesan-email" className="font-montserrat font-bold text-parsley-600 text-[16px] pl-3">
+                                Pesan Email
+                            </label>
+                            <textarea 
+                                name="pesan-email" 
+                                id="pesan-email" 
+                                placeholder="Isi Email Kamu.."
+                                required
+                                value={messageUser}
+                                onChange={(e) => setMessageUser(e.target.value)}
+                                className="block resize-none rounded-2xl w-full h-[calc(100%_-_36px)] bg-parsley-50 font-montserrat p-5 text-[20px] text-parsley-600 placeholder:text-parsley-600/50 placeholder:font-bold placeholder:font-montserrat focus:outline-none focus:ring-2 focus:ring-parsley-600"
+                            ></textarea>
                             </div>
-                            <button type="submit" className="w-full h-[5vh] rounded-2xl cursor-pointer bg-parsley-800 text-[16px] text-parsley-100 font-montserrat font-bold text-center">
-                                Kirim Email
+
+                            {/* Tombol Submit */}
+                            <button type="submit" className="w-full h-[5vh] rounded-2xl cursor-pointer bg-parsley-800 text-[16px] text-parsley-100 font-montserrat font-bold text-center hover:bg-parsley-700 transition">
+                            Kirim Email
                             </button>
                         </form>
-                    </div>
+                        </div>
                 </div>
             </div>
         </>

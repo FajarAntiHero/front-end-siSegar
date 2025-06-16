@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import logoSiSegar from '../assets/images/logo_sisegar.png';
 import { Link } from "react-router";
 import { ButtonCustomSizeableComponent } from './button';
+import { useState } from "react";
+import { UploadCloud } from "lucide-react";
 
 export function IconApp({ width, height, nameIcon, link = "#" , sizeIcon}) {
   return (
@@ -24,44 +26,35 @@ export function LogoSiSegar(){
     )
 }
 
-export function InputComponent( {nameLabel, idForm, typeInput, placeholder, marginForm, isRequired, value, onChange}){
-
-    if (isRequired){
-        return (
-            <>
-                <div className={`w-full h-[8vh] ${marginForm}`}>
-                    <label htmlFor={idForm} className='font-montserrat font-bold text-parsley-600 text-[12px] md:text-[14px] pl-4 mb-2'>{nameLabel}</label>
-                    <input 
-                        type={typeInput} 
-                        id={idForm} 
-                        placeholder={placeholder} 
-                        className='w-full h-[calc(100%_-_24px)] rounded-2xl bg-parsley-300 font-montserrat text-[14px] md:text-[16px] p-4 text-parsley-600 placeholder:font-bold placeholder:text-parsley-600' 
-                        required
-                        value={value}
-                        onChange={onChange}
-
-                    />
-                </div>
-            </>
-        )
-    } else {
-        return (
-            <>
-                <div className={`w-full h-[8vh] ${marginForm}`}>
-                    <label htmlFor={idForm} className='font-montserrat font-bold text-parsley-600 text-[12px] md:text-[14px] pl-4 mb-2'>{nameLabel}</label>
-                    <input 
-                        type={typeInput} 
-                        id={idForm} 
-                        placeholder={placeholder} 
-                        className='w-full h-[calc(100%_-_24px)] rounded-2xl bg-parsley-300 font-montserrat text-[14px] md:text-[16px] p-4 text-parsley-600 placeholder:font-bold placeholder:text-parsley-600' 
-                        value={value}
-                        onChange={onChange}
-
-                    />
-                </div>
-            </>
-        )
-    }
+export function InputComponent({
+  nameLabel,
+  idForm,
+  typeInput,
+  placeholder,
+  marginForm,
+  isRequired,
+  value,
+  onChange
+}) {
+  return (
+    <div className={`w-full h-[8vh] ${marginForm}`}>
+      <label
+        htmlFor={idForm}
+        className="font-montserrat font-bold text-parsley-600 text-[12px] md:text-[14px] pl-4 mb-2"
+      >
+        {nameLabel}
+      </label>
+      <input
+        type={typeInput}
+        id={idForm}
+        placeholder={placeholder}
+        className="w-full h-[calc(100%_-_24px)] rounded-2xl bg-parsley-300 font-montserrat text-[14px] md:text-[16px] p-4 text-parsley-600 placeholder:font-bold placeholder:text-parsley-600 focus:outline-none focus:ring-2 focus:ring-parsley-600"
+        required={isRequired}
+        value={value}
+        onChange={onChange}
+      />
+    </div>
+  );
 }
 
 export function TextAreaComponent( {nameLabel, idForm, typeInput, placeholder, marginForm, bgInput, isRequired, value, onChange}){
@@ -98,40 +91,29 @@ export function TextAreaComponent( {nameLabel, idForm, typeInput, placeholder, m
             </>
         )
     }
+  };
+
+  return (
+    <div className="flex flex-col items-center justify-center py-6 bg-parsley-50">
+      <label
+        htmlFor="upload"
+        className="cursor-pointer w-[45%] max-w-md h-[6vh] bg-parsley-300 hover:bg-parsley-400 text-parsley-950 font-bold font-montserrat text-md flex items-center justify-center rounded-2xl shadow-md transition duration-300 ease-in-out hover:scale-105"
+      >
+        📁 Pilih Gambar
+        <input
+          id="upload"
+          type="file"
+          accept="image/png, image/jpeg"
+          className="hidden"
+          onChange={handleFileChange}
+        />
+      </label>
+      <p className="text-sm text-parsley-600 font-montserrat mt-2">
+        Format: PNG atau JPEG
+      </p>
+    </div>
+  );
 }
-
-// export function MenuDashboard({bgMenu, position}){
-
-//     const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
-//     const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
-
-//     const isWrenchOpen = () => {
-//         setIsProductsDropdownOpen()
-//     }
-
-//     return (
-//         <>
-//             <div className={`w-full h-[8vh] p-4 ${bgMenu} rounded-3xl flex justify-center items-center`}>
-//                 <Link to={'/user/dashboard'} className="mx-4"><i className="fa-solid fa-house text-[24px] text-parsley-950"></i></Link>
-//                 <div className="w-fit h-fit relative group">
-//                     <i className="fa-solid fa-wrench mx-4 text-[24px] text-parsley-950"></i>
-//                     <div className={`lg:w-[200px] lg:h-[150px] hidden bg-parsley-500 rounded-2xl absolute ${position} p-3 group-hover:flex group-hover:flex-col group-hover:justify-between`}>
-//                         <div className="w-full h-[45%] flex items-center justify-center p-2 bg-parsley-100 hover:bg-parsley-50 rounded-xl font-montserrat font-bold text-parsley-600 mb-2"><Link to={"/user/lihat-komunitas"}>Lihat Komunitas</Link></div>
-//                         <div className="w-full h-[45%] flex items-center justify-center p-2 bg-parsley-100 hover:bg-parsley-50 rounded-xl font-montserrat font-bold text-parsley-600 "><Link to={"/user/lihat-acara"}>Lihat Acara</Link></div>
-//                     </div>
-//                 </div>
-//                 <div className="w-fit h-fit relative group">
-//                     <i className="fa-solid fa-user-group mx-4 text-[24px] text-parsley-950"></i>
-//                     <div className={`lg:w-[200px] lg:h-[150px] hidden bg-parsley-500 rounded-2xl absolute ${position} p-3 group-hover:flex group-hover:flex-col group-hover:justify-between`}>
-//                         <div className="w-full h-[45%] flex items-center justify-center p-2 bg-parsley-100 hover:bg-parsley-50 rounded-xl font-montserrat font-bold text-parsley-600 mb-2"><Link to={"/user/buat-komunitas"}>Buat Komunitas</Link></div>
-//                         <div className="w-full h-[45%] flex items-center justify-center p-2 bg-parsley-100 hover:bg-parsley-50 rounded-xl font-montserrat font-bold text-parsley-600 "><Link to={"/user/buat-acara"}>Buat Acara</Link></div>
-//                     </div>
-//                 </div>
-//                 <Link to={'/user/pengaturan'} className="mx-4"><i className="fa-solid fa-calendar-days text-[24px] text-parsley-950"></i></Link>
-//             </div>
-//         </>
-//     )
-// }
 
 export function MenuDashboard({bgMenu, position}){
     const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
